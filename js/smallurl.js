@@ -27,7 +27,6 @@ function do_visuals(url) {
 	$('#form').hide();
 	$('#shortened').show();
 	$('#short_url').select();
-	execCommand('copy');
 }
 function reset_form() {
 	// Reset all fields.
@@ -55,10 +54,3 @@ function validateText(str) {
 		return false;
 	}
 }
-
-window.plugins.clipboardManager.paste(
-    function(r){alert("The text in the clipboard is " + r)},
-    function(e){alert(e)}
-);
-
-paste();
