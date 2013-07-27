@@ -28,5 +28,6 @@
         permission on your app, which PhoneGap requires.
     -->
     <preference name="permissions"                value="none"/>
-        <access origin="http://api.smallurl.in/" />
+        <access origin="http://*.smallurl.in/" />
+        <access origin="http://smallurl.in/" />
 </widget>
