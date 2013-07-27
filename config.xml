@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "in.smallurl"
+        version   = "1.0.0">
+
+    <name>SmallURL</name>
+
+    <description>
+        Shorten long URL's on the GO with the SmallURL Android Application!.
+    </description>
+
+    <author href="http://smallurl.in" email="support@smallurl.in">
+        SmallURL Team
+    </author>
+
+    <!--
+        Enable individual API permissions here.
+        The "device" permission is required for the 'deviceready' event.
+    -->
+    <!--<feature name="http://api.phonegap.com/1.0/device" />-->
+	<gap:plugin name="com.phonegap.plugins.barcodescanner" />
+    <!--
+        If you do not want any permissions to be added to your app, add the
+        following tag to your config.xml; you will still have the INTERNET
+        permission on your app, which PhoneGap requires.
+    -->
+    <preference name="permissions"                value="none"/>
+        <access origin="http://api.smallurl.in/" />
+</widget>
