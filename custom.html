@@ -25,7 +25,7 @@
 </head>
 <body>
 <!-- Home -->
-<div data-role="page" id="page1">
+<div data-role="page" id="custom">
     <div data-theme="a" data-role="header">
         <span class="ui-title">
         </span>
@@ -51,14 +51,14 @@
 				<span id="alert_error">There was an error!</span>
 			</span>
 			<div data-role="fieldcontain">
-				<input name="" id="long_url" placeholder="URL Goes here..." value=""
+				<input id="long_url" placeholder="URL Goes here..." value=""
 				type="text" data-mini="true">
 			</div>
 			<h5>
 				Give it a name:
 			</h5>
 			<div data-role="fieldcontain">
-				<input name="" id="custom_url" placeholder="Pop a name in here..." value=""
+				<input id="custom_url" placeholder="Pop a name in here..." value=""
 				type="text" data-mini="true">
 			</div>
 			<input type="button" data-theme="b" value="Smallify!" onclick="call_shortener(true);">
@@ -68,7 +68,7 @@
 				All done!<br/>Here's your SmallURL:
 			</h5>
 			<div data-role="fieldcontain">
-				<input name="" id="short_url" disabled placeholder="URL Goes here..." value=""
+				<input id="short_url" readonly placeholder="URL Goes here..." value=""
 				type="text" data-mini="true">
 			</div>
 			<input type="button" data-theme="b" value="Smallify another!" onclick="reset_form();">

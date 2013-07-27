@@ -23,7 +23,7 @@ function call_shortener(do_custom) {
 	});
 }
 function do_visuals(url) {
-	$('#short_url').val('http://'+document.domain+'/'+url.short)
+	$('#short_url').val('http://smallurl.in/'+url.short)
 	$('#form').hide();
 	$('#shortened').show();
 	$('#short_url').select();

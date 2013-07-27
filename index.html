@@ -25,7 +25,7 @@
 </head>
 <body>
 <!-- Home -->
-<div data-role="page" id="page1">
+<div data-role="page" id="index">
     <div data-theme="a" data-role="header">
         <span class="ui-title">
         </span>
@@ -61,13 +61,13 @@
 				All done!<br/>Here's your SmallURL:
 			</h5>
 			<div data-role="fieldcontain">
-				<input name="" id="short_url" disabled placeholder="URL Goes here..." value=""
+				<input name="" id="short_url" readonly placeholder="URL Goes here..." value=""
 				type="text" data-mini="true">
 			</div>
 			<input type="button" data-theme="b" value="Smallify another!" onclick="reset_form();">
 
 		</div>
-		<input type="button" data-theme="b" value="Copy 'Chicken' to the CB!" onclick="copy('Chicken');">
+		<!--<input type="button" data-theme="b" value="Copy 'Chicken' to the CB!" onclick="copy('Chicken');">-->
 		</center>
     </div>
 </div>
