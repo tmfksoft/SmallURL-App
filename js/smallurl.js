@@ -54,3 +54,12 @@ function validateText(str) {
 		return false;
 	}
 }
+
+var scanner = cordova.require("cordova/plugin/BarcodeScanner");
+
+   scanner.encode(BarcodeScanner.Encode.TEXT_TYPE, "http://www.nytimes.com", function(success) {
+            alert("encode success: " + success);
+          }, function(fail) {
+            alert("encoding failed: " + fail);
+          }
+        );
