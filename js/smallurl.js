@@ -2,14 +2,14 @@
  * Copyright 2013 SmallURL
  * Do not attempt to exploit the SmallURL Service
 */
-function call_shortener() {
+function call_shortener(do_custom) {
 	var url = encodeURIComponent($('#long_url').val());
-	if ($('#custom_url').val() == "") {
-		var api_url = "http://"+document.domain+"/api/api.php?url="+url;
+	if (!do_custom) {
+		var api_url = "http://smallurl.in/api/api.php?url="+url;
 	}
 	else {
 		var custom = $('#custom_url').val();
-		var api_url = "http://"+document.domain+"/api/api.php?url="+url+"&custom="+custom;
+		var api_url = "http://smallurl.in/api/api.php?url="+url+"&custom="+custom;
 	}
 	$.getJSON(api_url,function (data) {
 		if (data.res == true) {
@@ -23,11 +23,11 @@ function call_shortener() {
 	});
 }
 function do_visuals(url) {
-	refresh_stats();
 	$('#short_url').val('http://'+document.domain+'/'+url.short)
 	$('#form').hide();
 	$('#shortened').show();
 	$('#short_url').select();
+	execCommand('copy');
 }
 function reset_form() {
 	// Reset all fields.
@@ -46,14 +46,6 @@ function show_custom() {
 	$('#custom_btn').hide();
 	$('#custom_form').show();
 }
-function refresh_stats() {
-	$.getJSON('api/json_stats.php',function (data) {
-		$('#stats_total').html(data.total);
-		$('#stats_random').html(data.random);
-		$('#stats_custom').html(data.custom);
-	});
-	return true;
-}
 function validateText(str) {
 	var tarea = str;
 	if (tarea.indexOf("http://")==0 && tarea.indexOf("https://")==0) {
@@ -63,39 +55,10 @@ function validateText(str) {
 		return false;
 	}
 }
-function show_screenshot() {
-	$(this).hide();
-	$('#screenie').show();
-}
-// Key Stuff for the user accounts
-function add_key() {
-	var keyname = $('#keyname').val();
-	var keydomain = $('#keydomain').val();
-	$.post("api/add_key.php",{name:keyname,domain:keydomain},function (data) {
-		var mydata = $.parseJSON(data);
-		if (mydata.res == true) {
-			// Worked
-			key_form();
-		}
-		else {
-			alert(mydata.msg);
-		}
-	});
-}
-function del_key(keyid) {
-	$.post("api/del_key.php",{id:keyid},function (data) {
-		var mydata = $.parseJSON(data);
-		if (mydata.res == true) {
-			// Worked
-			key_form();
-		}
-		else {
-			alert(mydata.msg);
-		}
-	});
-}
-function key_form() {
-	$.get('api/key_form.php',function (data) {
-		$('#key_form').html(data);
-	});
-}
+
+window.plugins.clipboardManager.paste(
+    function(r){alert("The text in the clipboard is " + r)},
+    function(e){alert(e)}
+);
+
+paste();

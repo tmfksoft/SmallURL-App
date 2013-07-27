@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css">
   
   <!-- Extra Codiqa features -->
-  <link rel="stylesheet" href="codiqa.ext.css">
+  <link rel="stylesheet" href="css/codiqa.ext.css">
   
   <!-- jQuery and jQuery Mobile -->
   <script src="js/jquery-1.9.1.min.js"></script>
@@ -17,6 +17,10 @@
 
   <!-- Extra Codiqa features -->
   <script src="js/codiqa.ext.js"></script>
+  
+  <!-- SmallURL's Script -->
+  <script src="clipboardmanager.js"></script>
+  <script src="js/smallurl.js"></script>
    
 </head>
 <body>
@@ -38,14 +42,31 @@
         <h2>
             SmallURL
         </h2>
-        <h5>
-            Pop your URL in below and hit Smallify!
-        </h5>
-        <div data-role="fieldcontain">
-            <input name="" id="textinput1" placeholder="URL Goes here..." value=""
-            type="text" data-mini="true">
-        </div>
-        <input type="submit" data-theme="b" value="Smallify!">
+		<div id="form">
+			<h5>
+				Pop your URL in below and hit Smallify!
+			</h5>
+			<span id="alert" style="display:none">
+				<h5>WHOOPS!</h5>
+				<span id="alert_error">There was an error!</span>
+			</span>
+			<div data-role="fieldcontain">
+				<input name="" id="long_url" placeholder="URL Goes here..." value=""
+				type="text" data-mini="true">
+			</div>
+			<input type="submit" data-theme="b" value="Smallify!" onclick="call_shortener(false);">
+		</div>
+		<div id="shortened" style="display:none">
+			<h5>
+				All done!<br/>Here's your SmallURL:
+			</h5>
+			<div data-role="fieldcontain">
+				<input name="" id="short_url" disabled placeholder="URL Goes here..." value=""
+				type="text" data-mini="true">
+			</div>
+			<input type="button" data-theme="b" value="Smallify another!" onclick="reset_form();">
+
+		</div>
 		</center>
     </div>
 </div>
