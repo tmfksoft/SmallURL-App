@@ -3,10 +3,13 @@ $(document).ready(function() {
 	check_logged_in();
 });
 $("#refresh").click(function() {
+	do_refresh();
+});
+function do_refresh() {
 	reset_list();
 	$('#loading').show();
 	get_urls();
-});
+}
 function get_urls() {
 	$.getJSON("http://smallurl.in/api/extension/get_urls.php",function (data) {
 		$('#loading').hide();

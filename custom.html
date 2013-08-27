@@ -6,42 +6,57 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <title></title>
-  <link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css">
-  
+
   <!-- Extra Codiqa features -->
-  <link rel="stylesheet" href="codiqa.ext.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+      <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+
+  <link rel="stylesheet" href="css/bootstrap-responsive.css">
   
   <!-- jQuery and jQuery Mobile -->
   <script src="js/jquery-1.9.1.min.js"></script>
-  <script src="js/jquery.mobile-1.3.1.min.js"></script>
 
   <!-- Extra Codiqa features -->
   <script src="js/codiqa.ext.js"></script>
-
-  <!-- SmallURL's Script -->
+  
+   <!-- SmallURL's Script -->
   <script src="clipboardmanager.js"></script>
   <script src="js/smallurl.js"></script>
-  
+   
 </head>
 <body>
 <!-- Home -->
-<div data-role="page" id="custom">
-    <div data-theme="a" data-role="header">
-        <span class="ui-title">
-        </span>
-        <a data-role="button" href="index.html" class="ui-btn-left">
-            Random URL
-        </a>
-        <a data-role="button" href="my_urls.html" data-icon="bars" data-iconpos="right"
-        class="ui-btn-right">
-            My URLs
-        </a>
-    </div>
-    <div data-role="content">
-		<center>
-        <h2>
-            SmallURL
-        </h2>
+	<nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+	  <!-- Brand and toggle get grouped for better mobile display -->
+	  <div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+		  <span class="sr-only">Toggle navigation</span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="index.html">SmallURL</a>
+	  </div>
+
+	  <!-- Collect the nav links, forms, and other content for toggling -->
+	  <div class="collapse navbar-collapse navbar-ex1-collapse">
+		<ul class="nav navbar-nav">
+              <li><a href="index.html">Shorten URL</a></li>
+              <li class="active"><a href="custom.html">Custom URL</a></li>
+              <li><a href="my_urls.html">My URLs</a></li>
+		</ul>
+	  </div><!-- /.navbar-collapse -->
+	</nav>
+<div class="container">
+	<center>
+		<div class="page-header">
+			<h2>SmallURL</h2>
+		</div>
 		<div id="form">
 			<h5>
 				Pop your URL in below, give it a name and hit Smallify!
@@ -51,31 +66,38 @@
 				<span id="alert_error">There was an error!</span>
 			</span>
 			<div data-role="fieldcontain">
-				<input id="long_url" placeholder="URL Goes here..." value=""
+				<input id="long_url" class="form-control" placeholder="URL Goes here..." value=""
 				type="text" data-mini="true">
 			</div>
 			<h5>
 				Give it a name:
 			</h5>
 			<div data-role="fieldcontain">
-				<input id="custom_url" placeholder="Pop a name in here..." value=""
+				<input id="custom_url" class="form-control" placeholder="Pop a name in here..." value=""
 				type="text" data-mini="true">
 			</div>
-			<input type="button" data-theme="b" value="Smallify!" onclick="call_shortener(true);">
+			<br/>
+			<input type="button" class="btn btn-primary" data-theme="b" value="Smallify!" onclick="call_shortener(true);">
 		</div>
 		<div id="shortened" style="display:none">
 			<h5>
 				All done!<br/>Here's your SmallURL:
 			</h5>
 			<div data-role="fieldcontain">
-				<input id="short_url" readonly placeholder="URL Goes here..." value=""
+				<input id="short_url" class="form-control" readonly placeholder="URL Goes here..." value=""
 				type="text" data-mini="true">
 			</div>
-			<input type="button" data-theme="b" value="Smallify another!" onclick="reset_form();">
+			<br/>
+			<input type="button" class="btn btn-primary" data-theme="b" value="Smallify another!" onclick="reset_form();">
 
 		</div>
+      <hr>
+	  </center>
+      <footer>
+		<center>
+        <p>&copy; SmallURL 2013 - <i>Smallifying URL's with safety and precaution in mind.</i></p>
 		</center>
-    </div>
-</div>
+	  </footer>
+    </div> <!-- /container -->
 </body>
 </html>
