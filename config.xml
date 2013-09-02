@@ -16,7 +16,7 @@
     <author href="http://smallurl.in" email="support@smallurl.in">
         SmallURL Team
     </author>
-
+	<icon src="android.png"></icon>
     <!--
         Enable individual API permissions here.
         The "device" permission is required for the 'deviceready' event.
