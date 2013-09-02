@@ -5,7 +5,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "in.smallurl"
         version   = "1.2"
-		versionCode = "98">
+		versionCode = "99">
 
     <name>SmallURL</name>
 
